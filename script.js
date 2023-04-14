@@ -1,5 +1,5 @@
 var inputval = document.querySelector("#cityinput");
-var btn = document.querySelector("#add");
+var btn = document.querySelector("#submitBtn");
 var city = document.querySelector("#cityoutput");
 var descrip = document.querySelector("#description");
 var temp = document.querySelector("#temp");
@@ -8,16 +8,16 @@ var wind = document.querySelector("#wind");
 var lon = document.querySelector("#lon")
 var lat = document.querySelector("#lat")
 
-
-api = "289c3037142f0afbbaabacdfeb6be362";
+var api = "3e93e8a1f9c284486775c8165017fa75";
 
 // function convertion(val) {
 // return (val - 32).toFixed(2);
 // }
 
 btn.addEventListener("click", function () {
+  console.log(inputval.value);
   fetch(
-    `https://api.openweathermap.org/data/2.5/forcast?q=${inputval.value}&units=imperial&appid=${api}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${inputval.value}&appid=${api}&units=imperial`
 )
 
     .then((res) => res.json())
